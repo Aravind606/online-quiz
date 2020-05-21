@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="row ">
+  <div class="col text-center">
+    <h2>Completed!</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="offset-lg-5 offset-sm-3">
+    <div class="card mt-4" style="width: 20rem;">
+      <img class=" card-img-top" src="../../assets/img/trophy.jpg" style="width: 250px; height: 250px;"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Your Result</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Final Score : {{score}} out of 10</li>
+          <li class="list-group-item">Time Taken : {{timeTaken}} </li>
+          <li class="list-group-item"> Grade</li>
+        </ul>
+        <button type="button" class="btn btn-outline-info btn-lg btn-block"> {{result}} </button>
+      </div>
+    </div>
+  </div>
+</div>

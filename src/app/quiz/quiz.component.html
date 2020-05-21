@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row justify-content-md-center" *ngIf="ques">
+    <div class="card">
+      <div class="card-body">
+        <span>Time Elapsed : {{displayTime()}}</span>
+        <h5 class="card-title">{{qnProgress+1}}</h5>
+        <p class="card-text">{{ques[qnProgress].question}}</p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <ng-container *ngFor="let option of ques[qnProgress].options; let i = index">
+
+          <li class="list-group-item"
+            [ngClass]="{'correctAns':submit && i == selected,'wrongAns':submit == false && selected == i ? true : false, 'default': submit == false && default == true}"
+            (click)="checkAnswer(i)">
+            <button [disabled]="disable" class="btn-lg btn-block">{{option}} </button>
+
+          </li>
+
+        </ng-container>
+      </ul>
+      <button class="btn btn-primary" [disabled]="nextDisable" (click)="next()">Next</button>
+    </div>
+  </div>
+</div>
