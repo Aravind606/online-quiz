@@ -7,7 +7,11 @@ const path = require('path');
 const participant = require('./models/participantmodel');
 const question = require('./models/questionmodel')
 
-mongoose.connect("mongodb://localhost:27017/quizapp");
+mongoose.connect(
+  "mongodb+srv://aravind:9994320498@cluster0-3msaz.azure.mongodb.net/quiz?retryWrites=true&w=majority", {
+    useNewUrlParser: true
+  }
+);
 
 const app = express();
 
