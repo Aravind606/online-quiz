@@ -15,6 +15,8 @@ mongoose.connect(
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, "../dist/")));
+
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({
   extended: true
@@ -79,6 +81,9 @@ app.get('/getscore/:id', (req, res) => {
   })
 })
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/", "index.html"));
+});
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("node server is running")
