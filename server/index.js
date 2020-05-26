@@ -24,7 +24,7 @@ app.use(bodyparser.urlencoded({
 app.use(cors());
 
 
-app.post('/register', (req, res) => {
+app.post('/api/register', (req, res) => {
   const insertParticipant = new participant({
     name: req.body.name,
     email: req.body.email,
@@ -40,7 +40,7 @@ app.post('/register', (req, res) => {
   });
 });
 
-app.post('/questions', (req, res) => {
+app.post('/api/questions', (req, res) => {
   const insertQuestion = new question({
     questions: req.body
   })
@@ -53,7 +53,7 @@ app.post('/questions', (req, res) => {
   });
 });
 
-app.get('/updatescore/:id', (req, res) => {
+app.get('/api/updatescore/:id', (req, res) => {
   participant.findByIdAndUpdate({
     _id: req.params.id
   }, {
@@ -69,7 +69,7 @@ app.get('/updatescore/:id', (req, res) => {
   })
 })
 
-app.get('/getscore/:id', (req, res) => {
+app.get('/api/getscore/:id', (req, res) => {
   participant.find({
     _id: req.params.id
   }, (err, user) => {

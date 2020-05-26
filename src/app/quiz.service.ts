@@ -17,7 +17,7 @@ export class QuizService {
   userScore;
   totalTime;
 
-  private apiUrl = "http://localhost:3000/"
+  private apiUrl = "/api/"
   constructor(private httpClient: HttpClient) { }
 
   insertParticipant(name: string, email: string) {
